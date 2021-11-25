@@ -10,11 +10,10 @@ const CountriesList = () => {
 
   useEffect(() => {
     if (countries.length === 0) {
-      fetchCountriesData().then((response) => {
-        const countriesArray = arrangeData(response);
-        dispatch(fetchCountries(countriesArray));
-        setFilter({ subregion: 'South America' });
-      });
+      const response = fetchCountriesData();
+      const countriesArray = arrangeData(response);
+      dispatch(fetchCountries(countriesArray));
+      setFilter({ subregion: 'South America' });
     }
   }, []);
 

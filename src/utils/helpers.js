@@ -1,13 +1,9 @@
-import axios from 'axios';
+const data = require('./countries.json');
 
-export const fetchCountriesData = () => {
-  const BASE_COUNTRIES_URL = 'https://restcountries.com/v3.1/all';
-
-  return axios.get(BASE_COUNTRIES_URL);
-};
+export const fetchCountriesData = () => (data);
 
 export const arrangeData = (response) => {
-  const countries = response.data
+  const countries = response
     .map((country) => {
       const {
         name: { common: countryName },
