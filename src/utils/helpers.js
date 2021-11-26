@@ -1,4 +1,5 @@
 import axios from 'axios';
+import env from 'react-dotenv';
 
 const data = require('./countries.json');
 
@@ -27,7 +28,8 @@ export const arrangeData = (response) => {
 };
 
 const fetchAirData = async ({ lat, lng }) => {
-  const API_TOKEN = '9426b5cf1dfdf6222ac8c25327359218';
+  const API_TOKEN = env.REACT_APP_API_KEY;
+  console.log(API_TOKEN);
   const URL = `http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lng}&appid=${API_TOKEN}`;
 
   const response = await axios.get(URL);
@@ -58,4 +60,15 @@ export const aqiTranslate = (value) => {
   const airQuality = ['Good', 'Fair', 'Moderate', 'Poor', 'Very Poor'];
 
   return airQuality[value - 1];
+};
+
+export const getSubregions = (countriesArray) => {
+  const subregions = [];
+  countriesArray.forEach((country) => {
+    if (!subregions.includes(country.subregion)) {
+      subregions.push(country.subregion);
+    }
+  });
+
+  return subregions;
 };
