@@ -5,9 +5,10 @@ const countriesSlice = createSlice({
   initialState: {
     data: [],
     filteredData: [],
+    filterSwitch: false,
   },
   reducers: {
-    fetchCountries: (state, action) => (
+    loadCountries: (state, action) => (
       {
         ...state,
         data: [...action.payload],
@@ -26,14 +27,20 @@ const countriesSlice = createSlice({
               return true;
             },
           ),
+        filterSwitch: !state.filterSwitch,
       }
     ),
     resetFilterData: (state) => ({
       ...state,
       filteredData: [],
     }),
+    loadAirData: (state, action) => (
+      {
+        ...state,
+        filteredData: [...action.payload],
+      }),
   },
 });
 
 export default countriesSlice.reducer;
-export const { fetchCountries, filterData } = countriesSlice.actions;
+export const { loadCountries, filterData, loadAirData } = countriesSlice.actions;
