@@ -71,3 +71,12 @@ export const getSubregions = (countriesArray) => {
 
   return subregions;
 };
+
+export const getCurrentCountry = ((countryName, countriesArray) => {
+  let currentCountry = {};
+  countriesArray.forEach((country) => {
+    if (country.countryName === countryName) currentCountry = { ...country };
+  });
+
+  return currentCountry;
+});

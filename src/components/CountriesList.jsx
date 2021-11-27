@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { nanoid } from '@reduxjs/toolkit';
+import { Link } from 'react-router-dom';
 import { fetchCountriesData, arrangeData, appendAirData } from '../utils/helpers';
 import { filterData, loadCountries, loadAirData } from '../redux/countries/countriesSlice';
 import FilterComponent from './FilterComponent';
@@ -38,9 +39,13 @@ const CountriesList = () => {
       <ul>
         {countries.map((country) => (
           <li key={nanoid()}>
-            <h2>{country.countryName}</h2>
-            <h3>{`lat: ${country.lat}`}</h3>
-            <h3>{`long: ${country.lng}`}</h3>
+            <Link to={`/country/${country.countryName}`}>
+              <div>
+                <h2>{country.countryName}</h2>
+                <h3>{`lat: ${country.lat}`}</h3>
+                <h3>{`long: ${country.lng}`}</h3>
+              </div>
+            </Link>
           </li>
         ))}
       </ul>

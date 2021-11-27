@@ -1,18 +1,17 @@
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { nanoid } from '@reduxjs/toolkit';
 import PropTypes from 'prop-types';
 import { getSubregions } from '../utils/helpers';
-import { filterData } from '../redux/countries/countriesSlice';
 
 const FilterComponent = ({ filter, setFilter }) => {
   const allCountries = useSelector((state) => state.countries.data);
   const subRegions = getSubregions(allCountries);
-  const dispatch = useDispatch();
+  subRegions.unshift(' ');
 
   const filterCountries = ((e) => {
-    setFilter({ ...filter, subregion: e.target.value });
-    console.log(filter);
-    dispatch(filterData(filter));
+    if (e.target.value !== ' ') {
+      setFilter({ ...filter, subregion: e.target.value });
+    }
   });
 
   return (
