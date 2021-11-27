@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { nanoid } from '@reduxjs/toolkit';
 import { fetchCountriesData, arrangeData, appendAirData } from '../utils/helpers';
 import { filterData, loadCountries, loadAirData } from '../redux/countries/countriesSlice';
+import FilterComponent from './FilterComponent';
 
 const CountriesList = () => {
   const dispatch = useDispatch();
@@ -31,15 +33,18 @@ const CountriesList = () => {
   }, [filter]);
 
   return (
-    <ul>
-      {countries.map((country, index) => (
-        <li key={`${index + 1}`}>
-          <h2>{country.countryName}</h2>
-          <h3>{`lat: ${country.lat}`}</h3>
-          <h3>{`long: ${country.lng}`}</h3>
-        </li>
-      ))}
-    </ul>
+    <div>
+      <FilterComponent filter={filter} setFilter={setFilter} />
+      <ul>
+        {countries.map((country) => (
+          <li key={nanoid()}>
+            <h2>{country.countryName}</h2>
+            <h3>{`lat: ${country.lat}`}</h3>
+            <h3>{`long: ${country.lng}`}</h3>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 };
 
