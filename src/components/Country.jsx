@@ -1,11 +1,9 @@
-/* import PropTypes from 'prop-types'; */
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router';
 import { getCurrentCountry, aqiTranslate } from '../utils/helpers';
 
 const Country = () => {
   const currentCountries = useSelector((state) => state.countries.filteredData);
-  /* const { params: { countryName } } = match; */
   const { countryName } = useParams();
   console.log(`THIS IS THE COUNTRY NAME: ${countryName}`);
   const currentCountry = getCurrentCountry(countryName, currentCountries);
@@ -23,13 +21,5 @@ const Country = () => {
     </div>
   );
 };
-
-/* Country.propTypes = {
-  match: PropTypes.shape({
-    params: PropTypes.shape({
-      countryName: PropTypes.string.isRequired,
-    }).isRequired,
-  }).isRequired,
-}; */
 
 export default Country;
