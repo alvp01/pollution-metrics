@@ -30,10 +30,6 @@ const countriesSlice = createSlice({
         filterSwitch: !state.filterSwitch,
       }
     ),
-    resetFilterData: (state) => ({
-      ...state,
-      filteredData: [],
-    }),
     loadAirData: (state, action) => (
       {
         ...state,

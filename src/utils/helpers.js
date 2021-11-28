@@ -1,5 +1,4 @@
 import axios from 'axios';
-import env from 'react-dotenv';
 
 const data = require('./countries.json');
 
@@ -24,7 +23,7 @@ export const arrangeData = (response) => {
 };
 
 const fetchAirData = async ({ lat, lng }) => {
-  const API_TOKEN = env.REACT_APP_API_KEY;
+  const API_TOKEN = process.env.REACT_APP_API_KEY;
   const URL = `http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lng}&appid=${API_TOKEN}`;
 
   const response = await axios.get(URL);

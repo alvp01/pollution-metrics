@@ -17,7 +17,7 @@ const FilterComponent = ({ filter, setFilter }) => {
   return (
     <form>
       <div>
-        <select onChange={filterCountries} className="form-select form-select-sm">
+        <select onChange={filterCountries} className="form-select form-select-sm" data-testid="test-select">
           {subRegions.map((region) => (
             <option key={nanoid()}>{region}</option>
           ))}

@@ -46,13 +46,13 @@ const CountriesList = () => {
           <div className="col-12 d-flex flex-row mb-3">
             <div className="col-6"><img alt="globe" src={globe} className="img-fluid" /></div>
             <div className="col-6 px-2">
-              <h1 className="text-white">Air Quality from differents countries around the globe!</h1>
+              <h1 className="text-white main-title">Air Quality from differents countries around the globe!</h1>
             </div>
           </div>
           <FilterComponent filter={filter} setFilter={setFilter} />
         </div>
         <div className="col-12 divider-bg">
-          <h2 className="text-white">{`Air quality for ${filter.subregion}`}</h2>
+          <h2 className="text-white divider-text">{`Air quality for ${filter.subregion}`}</h2>
         </div>
       </div>
       <div className="row countries-container">

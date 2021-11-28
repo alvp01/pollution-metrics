@@ -34,38 +34,38 @@ const Country = () => {
           <h3>{`AQI: ${aqi}, ${aqiTranslate(aqi)} quality air`}</h3>
         </div>
         <div className="col-12 divider-bg">
-          <h2>Components concentration</h2>
+          <h2 className="divider-text font-lato">Components concentration</h2>
         </div>
         <div className="componets-container col-12 px-0">
-          <div className="col-12 d-flex flex-row justify-content-between">
+          <div className="component align-items-center col-12 d-flex flex-row justify-content-between">
             <h4>Carbon monoxide:</h4>
             <h4>{`${co}`}</h4>
           </div>
-          <div className="col-12 d-flex flex-row justify-content-between">
+          <div className="component align-items-center col-12 d-flex flex-row justify-content-between">
             <h4>Nitrogen monoxide:</h4>
             <h4>{`${no}`}</h4>
           </div>
-          <div className="col-12 d-flex flex-row justify-content-between">
+          <div className="component align-items-center col-12 d-flex flex-row justify-content-between">
             <h4>Nitrogen dioxide:</h4>
             <h4>{`${no2}`}</h4>
           </div>
-          <div className="col-12 d-flex flex-row justify-content-between">
+          <div className="component align-items-center col-12 d-flex flex-row justify-content-between">
             <h4>Ammonia:</h4>
             <h4>{`${nh3}`}</h4>
           </div>
-          <div className="col-12 d-flex flex-row justify-content-between">
+          <div className="component align-items-center col-12 d-flex flex-row justify-content-between">
             <h4>Ozone:</h4>
             <h4>{`${o3}`}</h4>
           </div>
-          <div className="col-12 d-flex flex-row justify-content-between">
+          <div className="component align-items-center col-12 d-flex flex-row justify-content-between">
             <h4>Sulphur dioxide:</h4>
             <h4>{`${so2}`}</h4>
           </div>
-          <div className="col-12 d-flex flex-row justify-content-between">
+          <div className="component align-items-center col-12 d-flex flex-row justify-content-between">
             <h4>Particulates:</h4>
             <h4>{`${pm25}`}</h4>
           </div>
-          <div className="col-12 d-flex flex-row justify-content-between">
+          <div className="component align-items-center col-12 d-flex flex-row justify-content-between">
             <h4>Particulates:</h4>
             <h4>{`${pm10}`}</h4>
           </div>

@@ -24,13 +24,10 @@ body {
   background-color: #193366;
 }
 
-a {
-  text-decoration: none;
-  color: white;
-}
-
-a:hover {
-  text-decoration: none;
+h1,
+h2,
+h3,
+h4 {
   color: white;
 }
 
@@ -74,4 +71,26 @@ a:hover {
 
 .componets-container > div:nth-child(odd) {
   background-color: #2c4c8c;
+}
+
+.component {
+  height: 60px;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.divider-text,
+.main-title {
+  margin-top: 0;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  font-weight: bolder;
+}
+
+.main-title {
+  font-size: 25px;
+}
+
+.divider-text {
+  font-size: 15px;
 }
