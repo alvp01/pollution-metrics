@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { nanoid } from '@reduxjs/toolkit';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import {
   fetchCountriesData, arrangeData, appendAirData, getQueryTime, aqiTranslate, checkForKeyInArray,
 } from '../utils/helpers';
 import { filterData, loadCountries, loadAirData } from '../redux/countries/countriesSlice';
 import FilterComponent from './FilterComponent';
+import Header from './Header';
 import globe from '../assets/globe.png';
 
 const CountriesList = () => {
@@ -14,6 +15,7 @@ const CountriesList = () => {
   const countries = useSelector((state) => state.countries.filteredData);
   const [filter, setFilter] = useState({});
   const filterSwitch = useSelector((state) => state.countries.filterSwitch);
+  const navigate = useNavigate();
 
   useEffect(async () => {
     if (countries.length !== 0 && countries.length !== 250) {
@@ -40,6 +42,7 @@ const CountriesList = () => {
     <div className="container-fluid">
       <div className="row">
         <div className="col-12 primary-bg main-section flex-center flex-wrap">
+          <Header title="Countries" />
           <div className="col-12 d-flex flex-row mb-3">
             <div className="col-6"><img alt="globe" src={globe} className="img-fluid" /></div>
             <div className="col-6 px-2">
@@ -49,22 +52,25 @@ const CountriesList = () => {
           <FilterComponent filter={filter} setFilter={setFilter} />
         </div>
         <div className="col-12 divider-bg">
-          <h1 className="text-white">{`Air quality for ${filter.subregion}`}</h1>
+          <h2 className="text-white">{`Air quality for ${filter.subregion}`}</h2>
         </div>
       </div>
       <div className="row countries-container">
         {!checkForKeyInArray('airData', countries)
           ? <h3>loading countries</h3>
           : countries.map((country) => (
-            <div key={nanoid()} className="country-element col-6 flex-center secondary-bg">
-              <Link to={`/country/${country.countryName}`}>
-                <div>
-                  <h2>{country.countryName}</h2>
-                  <h4>{`${aqiTranslate(country.airData.main.aqi)} air quality`}</h4>
-                  <h4>{`Air Quality Index: ${country.airData.main.aqi}`}</h4>
-                  <h4 className="main-date-time">{getQueryTime(country.airData.dt)}</h4>
-                </div>
-              </Link>
+            <div
+              role="presentation"
+              key={nanoid()}
+              className="country-element col-6 flex-center secondary-bg cursor-pointer"
+              onClick={() => navigate(`/country/${country.countryName}`)}
+            >
+              <div>
+                <h2>{country.countryName}</h2>
+                <h4>{`${aqiTranslate(country.airData.main.aqi)} air quality`}</h4>
+                <h4>{`Air Quality Index: ${country.airData.main.aqi}`}</h4>
+                <h4 className="main-date-time">{getQueryTime(country.airData.dt)}</h4>
+              </div>
             </div>
           ))}
       </div>

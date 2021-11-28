@@ -10,16 +10,12 @@ export const arrangeData = (response) => {
     .map((country) => {
       const {
         name: { common: countryName },
-        capital,
-        region,
         subregion,
         latlng,
-        flags,
-        capitalInfo,
       } = country;
       const [lat, lng] = latlng;
       const newCountry = {
-        countryName, capital, capitalInfo, region, subregion, flags, lat, lng,
+        countryName, subregion, lat, lng,
       };
       return newCountry;
     });

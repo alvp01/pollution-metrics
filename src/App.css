@@ -4,6 +4,10 @@ body {
   font-family: 'Gill Sans', sans-serif;
 }
 
+.header {
+  height: 45px;
+}
+
 .font-lato {
   font-family: lato, sans-serif !important;
 }
@@ -50,10 +54,24 @@ a:hover {
 }
 
 .main-section {
-  height: 300px;
+  height: 400px;
+  padding-top: 20px;
 }
 
 .img-container {
   height: 125px;
   width: 125px;
+}
+
+.country-main-section {
+  height: 250px;
+  padding-top: 20px;
+}
+
+.componets-container > div:nth-child(even) {
+  background-color: #4162a4;
+}
+
+.componets-container > div:nth-child(odd) {
+  background-color: #2c4c8c;
 }
