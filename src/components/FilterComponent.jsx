@@ -6,10 +6,10 @@ import { getSubregions } from '../utils/helpers';
 const FilterComponent = ({ filter, setFilter }) => {
   const allCountries = useSelector((state) => state.countries.data);
   const subRegions = getSubregions(allCountries);
-  subRegions.unshift(' ');
+  subRegions.unshift('Select a Region');
 
   const filterCountries = ((e) => {
-    if (e.target.value !== ' ') {
+    if (e.target.value !== 'Select a Region') {
       setFilter({ ...filter, subregion: e.target.value });
     }
   });
@@ -17,7 +17,7 @@ const FilterComponent = ({ filter, setFilter }) => {
   return (
     <form>
       <div>
-        <select onChange={filterCountries}>
+        <select onChange={filterCountries} className="form-select form-select-sm">
           {subRegions.map((region) => (
             <option key={nanoid()}>{region}</option>
           ))}

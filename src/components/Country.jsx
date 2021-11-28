@@ -5,9 +5,7 @@ import { getCurrentCountry, aqiTranslate } from '../utils/helpers';
 const Country = () => {
   const currentCountries = useSelector((state) => state.countries.filteredData);
   const { countryName } = useParams();
-  console.log(`THIS IS THE COUNTRY NAME: ${countryName}`);
   const currentCountry = getCurrentCountry(countryName, currentCountries);
-  console.log(currentCountry);
   const {
     airData: {
       main: { aqi },

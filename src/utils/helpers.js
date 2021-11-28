@@ -80,3 +80,16 @@ export const getCurrentCountry = ((countryName, countriesArray) => {
 
   return currentCountry;
 });
+
+export const getQueryTime = (timestamp) => {
+  const integerTimestamp = parseInt(timestamp, 10);
+  const queryTime = new Date(integerTimestamp * 1000);
+
+  return `${queryTime}`;
+};
+
+export const checkForKeyInArray = (key, countries) => {
+  const isPresent = countries.some((obj) => Object.keys(obj).includes(key));
+
+  return isPresent;
+};
