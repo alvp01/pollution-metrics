@@ -24,7 +24,7 @@ export const arrangeData = (response) => {
 
 const fetchAirData = async ({ lat, lng }) => {
   const API_TOKEN = '9426b5cf1dfdf6222ac8c25327359218';
-  const URL = `http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lng}&appid=${API_TOKEN}`;
+  const URL = `https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lng}&appid=${API_TOKEN}`;
 
   const response = await axios.get(URL);
 
