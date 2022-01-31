@@ -16,6 +16,7 @@ const CountriesList = () => {
   const [filter, setFilter] = useState({});
   const filterSwitch = useSelector((state) => state.countries.filterSwitch);
   const navigate = useNavigate();
+  const currentRegion = useSelector((state) => state.countries.currentRegion);
 
   useEffect(async () => {
     if (countries.length !== 0 && countries.length !== 250) {
@@ -52,7 +53,7 @@ const CountriesList = () => {
           <FilterComponent filter={filter} setFilter={setFilter} />
         </div>
         <div className="col-12 divider-bg">
-          <h2 className="text-white divider-text">{`Air quality for ${filter.subregion}`}</h2>
+          <h2 className="text-white divider-text">{`Air quality for ${currentRegion}`}</h2>
         </div>
       </div>
       <div className="row countries-container">

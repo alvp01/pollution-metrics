@@ -6,6 +6,7 @@ const countriesSlice = createSlice({
     data: [],
     filteredData: [],
     filterSwitch: false,
+    currentRegion: 'South America',
   },
   reducers: {
     loadCountries: (state, action) => (
@@ -28,6 +29,7 @@ const countriesSlice = createSlice({
             },
           ),
         filterSwitch: !state.filterSwitch,
+        currentRegion: action.payload.subregion,
       }
     ),
     loadAirData: (state, action) => (

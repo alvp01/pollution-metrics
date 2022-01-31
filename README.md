@@ -2,7 +2,7 @@
 
 Microverse capstone react/redux project<br>
 
-This apps is a two pages feature app. The objetive of this app is to get air pollution data from countries all around the world and filter such countries by region.<br>
+This apps is a two pages mobile web app. The objetive of this app is to get air pollution data from countries all around the world and filter such countries by region.<br>
 The first page show the air quality index (AQI) of each country in the filtered region, and the timestamp of when the query was made. <br>
 The user is able to click in each of the countries to enter in the details page. This page shows the AQI and the components and particles present in the air in the moment when the query was made.
 
