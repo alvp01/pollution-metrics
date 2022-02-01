@@ -1,14 +1,37 @@
 # Pollution Metrics
 
-Microverse capstone react/redux project<br>
-
-This apps is a two pages mobile web app. The objetive of this app is to get air pollution data from countries all around the world and filter such countries by region.<br>
+This app is a two pages mobile web app. The objetive of this app is to get air pollution data from countries all around the world and filter such countries by region.<br>
 The first page show the air quality index (AQI) of each country in the filtered region, and the timestamp of when the query was made. <br>
 The user is able to click in each of the countries to enter in the details page. This page shows the AQI and the components and particles present in the air in the moment when the query was made.
 
 ## App appereance
 
 ![appdesign](./app_img.jpg)
+
+## App functionality
+**Homepage**
+
+The first page shows to the user a list of countries filtered by region. Each country has its AQI (and a AQI translation to common language) and the timestamp for when the AQI query was made. The user may click a specific country to get more detailed information.
+
+![homepage](./app_img.jpg)
+
+**Country page**
+
+When the user clicks a specific country the app will render the page of such country dynamically, displaying the AQI and the particules in the air of the country's air at the moment of the query.
+
+![country page](./country-page.png)
+
+## Live Link
+
+- [Live demo](https://objective-shaw-384c5d.netlify.app/)
+
+## Future features to add
+
+In the near future I will add:
+
+- Desktop version UI
+- Loaders
+- Search bar
 
 ## Built with
 
@@ -115,7 +138,7 @@ Then, create a .env in the root folder of the project and create a variable like
 
 ## Video link
 
-
+- [Link to the video presentation](https://drive.google.com/file/d/1VJbBlovpTN2J2foGM8G9Xo4nCNRh1628/view?usp=sharing)
 
 ## Author
 
@@ -128,7 +151,7 @@ Then, create a .env in the root folder of the project and create a variable like
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/alvp01/leader-board-project/issues)
+Feel free to check the [issues page](https://github.com/alvp01/pollution-metrics/issues)
 
 ## 📝 License
 
