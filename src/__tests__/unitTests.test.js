@@ -19,9 +19,9 @@ describe('test components', () => {
       <Provider store={store}>
         <Router>
           <Routes>
-            <Route element={<HomePage />}/>
+            <Route element={<HomePage />} />
           </Routes>
-        </Router>        
+        </Router>
       </Provider>,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -32,7 +32,7 @@ describe('test components', () => {
       <Provider store={store}>
         <Router>
           <Routes>
-            <Route element={<CountryPage />}/>
+            <Route element={<CountryPage />} />
           </Routes>
         </Router>
       </Provider>,
