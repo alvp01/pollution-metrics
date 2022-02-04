@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test components renders country page with redux 1`] = `<DocumentFragment />`;
+
+exports[`test components renders homepage page with redux 1`] = `<DocumentFragment />`;
