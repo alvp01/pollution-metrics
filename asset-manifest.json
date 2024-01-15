@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/pollution-metrics/static/css/main.ef9e34d7.css",
+    "main.js": "/pollution-metrics/static/js/main.71ccfc15.js",
+    "static/js/787.bbe030da.chunk.js": "/pollution-metrics/static/js/787.bbe030da.chunk.js",
+    "static/media/globe.png": "/pollution-metrics/static/media/globe.a4b4fccd51f79ba6288e.png",
+    "index.html": "/pollution-metrics/index.html",
+    "main.ef9e34d7.css.map": "/pollution-metrics/static/css/main.ef9e34d7.css.map",
+    "main.71ccfc15.js.map": "/pollution-metrics/static/js/main.71ccfc15.js.map",
+    "787.bbe030da.chunk.js.map": "/pollution-metrics/static/js/787.bbe030da.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ef9e34d7.css",
+    "static/js/main.71ccfc15.js"
+  ]
+}
