@@ -14,7 +14,7 @@ function App() {
     <Provider store={store}>
       <Router>
         <Routes>
-          <Route exact path="/" element={<HomePage />} />
+          <Route exact path="/pollution-metrics" element={<HomePage />} />
           <Route path="/country/:countryName" element={<CountryPage />} />
         </Routes>
       </Router>
