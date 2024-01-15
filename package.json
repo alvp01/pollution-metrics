@@ -1,5 +1,6 @@
 {
   "name": "pollution-metrics",
+  "homepage": "https://alvp01.github.io/pollution-metrics",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -7,8 +8,9 @@
     "@testing-library/jest-dom": "^5.15.0",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
-    "axios": "^0.24.0",
+    "axios": "^1.6.5",
     "fetch-mock": "^9.11.0",
+    "gh-pages": "^6.1.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -17,7 +19,7 @@
     "react-redux": "^7.2.6",
     "react-router": "^6.0.2",
     "react-router-dom": "^6.0.2",
-    "react-scripts": "4.0.3",
+    "react-scripts": "^5.0.1",
     "redux": "^4.1.2",
     "redux-logger": "^3.0.6",
     "redux-mock-store": "^1.5.4",
@@ -29,7 +31,9 @@
     "build": "react-dotenv && react-scripts build",
     "serve": "react-dotenv && serve build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -65,9 +69,9 @@
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.27.1",
     "eslint-plugin-react-hooks": "^4.3.0",
-    "stylelint": "^13.13.1",
-    "stylelint-config-standard": "^21.0.0",
-    "stylelint-csstree-validator": "^1.9.0",
-    "stylelint-scss": "^3.21.0"
+    "stylelint": "^16.1.0",
+    "stylelint-config-standard": "^36.0.0",
+    "stylelint-csstree-validator": "^3.0.0",
+    "stylelint-scss": "^6.0.0"
   }
 }
